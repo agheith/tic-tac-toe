@@ -1,33 +1,63 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  align-items: center;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+header {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  width: 100%;
+  background-color: #3FC97F;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3,5em);
+  grid-template-rows: repeat(3,5em);
+}
+
+.board > * {
+  border: 1px solid black;
+  border-width: 0 10px 10px 0;
+  display: flex; /* flex styling to center content in divs */
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.board > *:nth-of-type(3n)  {
+	border-right-width: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.board > *:nth-of-type(n+7) {
+	border-bottom-width: 0;
+}
+
+.resetButton {
+  margin-top: 10px;
+}
+
+.square {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.square:hover {
+  background-color: #3FC97F;
+  cursor: pointer;
+}
+
+.status {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
 }
